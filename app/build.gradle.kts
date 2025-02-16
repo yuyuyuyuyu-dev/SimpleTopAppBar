@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "dev.yuyuyuyuyu.simpletopappbar.example.android"
-    compileSdk = 35
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "dev.yuyuyuyuyu.simpletopappbar.example.android"
-        minSdk = 21
-        targetSdk = 35
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -40,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":SimpleTopAppBar"))
+    implementation(libs.androidx.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
