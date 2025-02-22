@@ -41,6 +41,96 @@ kotlin {
 <img width="300" alt="Compose Multiplatform main screen screenshot" src="https://github.com/user-attachments/assets/61259d40-ddd5-42b8-b35a-a084724882b7" />
 <img width="300" alt="Compose Multiplatform open source licenses screen screenshot" src="https://github.com/user-attachments/assets/38be0a16-8af3-4632-b299-a98e23ffcd21" />
 
+## Examples
+### Android
+[app/src/main/java/dev/yuyuyuyuyu/simpletopappbar/example/android/ui/App.kt](https://github.com/yu-ko-ba/SimpleTopAppBar/blob/main/app/src/main/java/dev/yuyuyuyuyu/simpletopappbar/example/android/ui/App.kt)
+```kotlin
+@Composable
+fun App(
+    navController: NavHostController = rememberNavController(),
+) {
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentScreen = NavigateDestination.valueOf(
+        value = backStackEntry?.destination?.route
+            ?: NavigateDestination.SimpleTopAppBarExample.name,
+    )
+
+    SimpleTopAppBarTheme {
+        Scaffold(
+            topBar = {
+                SimpleTopAppBar(
+                    title = currentScreen.name,
+                    navigateBackIsPossible = navController.previousBackStackEntry != null,
+                    onNavigateBackButtonClick = { navController.navigateUp() },
+                    onOpenSourceLicensesButtonClick = {
+                        if (currentScreen != NavigateDestination.OpenSourceLicenses) {
+                            navController.navigate(NavigateDestination.OpenSourceLicenses.name)
+                        }
+                    },
+                )
+            },
+        ) { innerPadding ->
+            NavHost(
+                navController = navController,
+                startDestination = NavigateDestination.SimpleTopAppBarExample.name,
+                modifier = Modifier.padding(innerPadding),
+            ) {
+                composable(route = NavigateDestination.SimpleTopAppBarExample.name) {
+                    SimpleTopAppBarExampleScreen()
+                }
+                composable(route = NavigateDestination.OpenSourceLicenses.name) {
+                    OpenSourceLicensesScreen()
+                }
+            }
+        }
+    }
+}
+```
+
+### Compose Multiplatform
+[composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/simpletopappbar/example/multiplatform/ui/App.kt](https://github.com/yu-ko-ba/SimpleTopAppBar/blob/main/composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/simpletopappbar/example/multiplatform/ui/App.kt)
+```kotlin
+fun App(
+    navController: NavHostController = rememberNavController(),
+) {
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentScreen = NavigateDestination.valueOf(
+        value = backStackEntry?.destination?.route
+            ?: NavigateDestination.SimpleTopAppBarExample.name,
+    )
+
+    MaterialTheme {
+        Scaffold(
+            topBar = {
+                SimpleTopAppBar(
+                    title = currentScreen.name,
+                    navigateBackIsPossible = navController.previousBackStackEntry != null,
+                    onNavigateBackButtonClick = { navController.navigateUp() },
+                    onOpenSourceLicensesButtonClick = {
+                        if (currentScreen != NavigateDestination.OpenSourceLicenses) {
+                            navController.navigate(NavigateDestination.OpenSourceLicenses.name)
+                        }
+                    },
+                )
+            },
+        ) { innerPadding ->
+            NavHost(
+                navController = navController,
+                startDestination = NavigateDestination.SimpleTopAppBarExample.name,
+                modifier = Modifier.padding(innerPadding),
+            ) {
+                composable(route = NavigateDestination.SimpleTopAppBarExample.name) {
+                    SimpleTopAppBarExampleScreen()
+                }
+                composable(route = NavigateDestination.OpenSourceLicenses.name) {
+                    OpenSourceLicensesScreen()
+                }
+            }
+        }
+    }
+}
+```
+
 ## License
 Apache License 2.0
 ```
