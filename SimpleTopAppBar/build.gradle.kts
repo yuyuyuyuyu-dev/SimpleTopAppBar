@@ -1,3 +1,4 @@
+import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -8,6 +9,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.vanniktech.maven.publish)
 }
 
 kotlin {
@@ -115,4 +117,41 @@ compose.desktop {
 
 tasks.named("wasmJsBrowserProductionWebpack") {
     dependsOn(":composeApp:wasmJsProductionExecutableCompileSync")
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+    signAllPublications()
+
+    coordinates(
+        groupId = "dev.yuyuyuyuyu",
+        artifactId = "simpletopappbar",
+        version = "0.1.0",
+    )
+
+    pom {
+        name = "SimpleTopAppBar"
+        description = "A library that provide simple TopAppBar for Android and Compose Multiplatform."
+        inceptionYear = "2025"
+        url = "https://github.com/yu-ko-ba/SimpleTopAppBar"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                name = "yu"
+                url = "https://yuyuyuyuyu.dev"
+            }
+        }
+        scm {
+            url = "https://github.com/yu-ko-ba/SimpleTopAppBar"
+            connection = "scm:git:git://github.com/yu-ko-ba/SimpleTopAppBar.git"
+            developerConnection = "scm:git:ssh://git@github.com/yu-ko-ba/SimpleTopAppBar.git"
+        }
+    }
 }
