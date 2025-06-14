@@ -6,6 +6,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -26,6 +27,8 @@ fun App(
             ?: NavigateDestination.SimpleTopAppBarExample.name,
     )
 
+    val uriHandler = LocalUriHandler.current
+
     MaterialTheme {
         Scaffold(
             topBar = {
@@ -37,6 +40,9 @@ fun App(
                         if (currentScreen != NavigateDestination.OpenSourceLicenses) {
                             navController.navigate(NavigateDestination.OpenSourceLicenses.name)
                         }
+                    },
+                    onSourceCodeButtonClick = {
+                        uriHandler.openUri("https://github.com/yuyuyuyuyu-dev/SimpleTopAppBar")
                     },
                 )
             },

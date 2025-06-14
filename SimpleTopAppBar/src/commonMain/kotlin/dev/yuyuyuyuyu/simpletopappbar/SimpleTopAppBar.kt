@@ -1,7 +1,11 @@
 package dev.yuyuyuyuyu.simpletopappbar
 
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -16,6 +20,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -24,7 +29,13 @@ fun SimpleTopAppBar(
     modifier: Modifier = Modifier,
     navigateBackIsPossible: Boolean,
     openSourceLicensesButtonLabel: @Composable () -> Unit = { Text("オープンソース ライセンス") },
-    sourceCodeButtonLabel: @Composable () -> Unit = { Text("ソースコード") },
+    sourceCodeButtonLabel: @Composable () -> Unit = {
+        Row {
+            Icon(Icons.AutoMirrored.Default.OpenInNew, null)
+            Spacer(Modifier.width(1.dp))
+            Text("ソースコード")
+        }
+    },
     onNavigateBackButtonClick: () -> Unit,
     onOpenSourceLicensesButtonClick: () -> Unit,
     onSourceCodeButtonClick: (() -> Unit)? = null,
