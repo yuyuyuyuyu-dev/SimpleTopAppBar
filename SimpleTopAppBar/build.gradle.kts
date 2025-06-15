@@ -79,7 +79,7 @@ mavenPublishing {
     coordinates(
         groupId = "dev.yuyuyuyuyu",
         artifactId = "simpletopappbar",
-        version = "0.2.0",
+        version = "0.2.1",
     )
 
     pom {
