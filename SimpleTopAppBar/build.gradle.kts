@@ -79,14 +79,14 @@ mavenPublishing {
     coordinates(
         groupId = "dev.yuyuyuyuyu",
         artifactId = "simpletopappbar",
-        version = "0.2.1",
+        version = "0.3.0",
     )
 
     pom {
         name = "SimpleTopAppBar"
         description = "A library that provide simple TopAppBar for Android and Compose Multiplatform."
         inceptionYear = "2025"
-        url = "https://github.com/yu-ko-ba/SimpleTopAppBar"
+        url = "https://github.com/yuyuyuyuyu-dev/SimpleTopAppBar"
         licenses {
             license {
                 name = "The Apache License, Version 2.0"
@@ -101,9 +101,9 @@ mavenPublishing {
             }
         }
         scm {
-            url = "https://github.com/yu-ko-ba/SimpleTopAppBar"
-            connection = "scm:git:git://github.com/yu-ko-ba/SimpleTopAppBar.git"
-            developerConnection = "scm:git:ssh://git@github.com/yu-ko-ba/SimpleTopAppBar.git"
+            url = "https://github.com/yuyuyuyuyu-dev/SimpleTopAppBar"
+            connection = "scm:git:git://github.com/yuyuyuyuyu-dev/SimpleTopAppBar.git"
+            developerConnection = "scm:git:ssh://git@github.com/yuyuyuyuyu-dev/SimpleTopAppBar.git"
         }
     }
 }
