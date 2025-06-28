@@ -45,7 +45,7 @@ kotlin {
 }
 
 android {
-    namespace = "dev.yuyuyuyuyu.simpletopappbar"
+    namespace = "dev.yuyuyuyuyu.simpleTopAppBar"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

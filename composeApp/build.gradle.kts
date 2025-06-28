@@ -79,7 +79,7 @@ kotlin {
 }
 
 android {
-    namespace = "dev.yuyuyuyuyu.simpletopappbar.example.multiplatform"
+    namespace = "dev.yuyuyuyuyu.simpleTopAppBar.example.multiplatform"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

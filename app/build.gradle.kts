@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.yuyuyuyuyu.simpletopappbar.example.android"
+    namespace = "dev.yuyuyuyuyu.simpleTopAppBar.example.android"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
