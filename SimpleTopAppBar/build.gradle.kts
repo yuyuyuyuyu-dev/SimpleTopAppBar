@@ -1,4 +1,5 @@
 import com.vanniktech.maven.publish.SonatypeHost
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -28,6 +29,11 @@ kotlin {
     }
 
     jvm("desktop")
+
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        browser()
+    }
 
     sourceSets {
         commonMain.dependencies {
@@ -79,7 +85,7 @@ mavenPublishing {
     coordinates(
         groupId = "dev.yuyuyuyuyu",
         artifactId = "simpletopappbar",
-        version = "0.3.0",
+        version = "0.3.1",
     )
 
     pom {
