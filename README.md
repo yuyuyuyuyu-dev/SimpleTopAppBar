@@ -1,19 +1,25 @@
 # SimpleTopAppBar
+
 A simple TopAppBar for Android and Compose Multiplatrorm, include navigate back button and kebab menu button.
 
 ## Installation
+
 ### Android
+
 app/build.gradle.kts
+
 ```diff
 dependencies {
     ...
 
-+   implementation("dev.yuyuyuyuyu:simpletopappbar:0.1.0")
++   implementation("dev.yuyuyuyuyu:simpletopappbar:0.3.1")
 }
 ```
 
 ### Compose Multiplatform
+
 composeApp/build.gradle.kts
+
 ```diff
 kotlin {
 ...
@@ -24,7 +30,7 @@ kotlin {
         commonMain.dependencies {
             ...
 
-+           implementation("dev.yuyuyuyuyu:simpletopappbar:0.1.0")
++           implementation("dev.yuyuyuyuyu:simpletopappbar:0.3.1")
         }
     }
 }
@@ -32,18 +38,23 @@ kotlin {
 ```
 
 ## Screenshots
+
 ### Android
+
 <img width="300" alt="Android main screen screenshot" src="https://github.com/user-attachments/assets/11416c50-febf-43e7-8287-1aa01c68ba53" />
 <img width="300" alt="Android open source licenses screen screenshot" src="https://github.com/user-attachments/assets/5ca8ac16-29a3-4303-bf37-54ca62962e64" />
 
-
 ### Compose Multiplatform
+
 <img width="300" alt="Compose Multiplatform main screen screenshot" src="https://github.com/user-attachments/assets/61259d40-ddd5-42b8-b35a-a084724882b7" />
 <img width="300" alt="Compose Multiplatform open source licenses screen screenshot" src="https://github.com/user-attachments/assets/38be0a16-8af3-4632-b299-a98e23ffcd21" />
 
 ## Examples
+
 ### Android
+
 [app/src/main/java/dev/yuyuyuyuyu/simpletopappbar/example/android/ui/App.kt](https://github.com/yu-ko-ba/SimpleTopAppBar/blob/main/app/src/main/java/dev/yuyuyuyuyu/simpletopappbar/example/android/ui/App.kt)
+
 ```kotlin
 @Composable
 fun App(
@@ -88,7 +99,9 @@ fun App(
 ```
 
 ### Compose Multiplatform
+
 [composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/simpletopappbar/example/multiplatform/ui/App.kt](https://github.com/yu-ko-ba/SimpleTopAppBar/blob/main/composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/simpletopappbar/example/multiplatform/ui/App.kt)
+
 ```kotlin
 fun App(
     navController: NavHostController = rememberNavController(),
@@ -132,7 +145,9 @@ fun App(
 ```
 
 ## License
+
 Apache License 2.0
+
 ```
 Copyright 2025 yu
 
