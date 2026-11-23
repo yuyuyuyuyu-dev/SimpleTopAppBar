@@ -1,6 +1,28 @@
 # SimpleTopAppBar
 
+> [!IMPORTANT]
+> SimpleTopAppBar has moved to [MyComposables](https://github.com/yuyuyuyuyu-dev/my-composables).
+> This repository is no longer maintained.
+
 A simple TopAppBar for Android and Compose Multiplatrorm, include navigate back button and kebab menu button.
+
+## Migrating to MyComposables
+
+1. Replace the dependency.
+
+   ```diff
+   - implementation("dev.yuyuyuyuyu:simpletopappbar:0.3.1")
+   + implementation("dev.yuyuyuyuyu:my-composables:x.x.x") // Please replace with the latest version.
+   ```
+
+2. Replace the package in your imports.
+
+   ```diff
+   - import dev.yuyuyuyuyu.simpleTopAppBar.SimpleTopAppBar
+   + import dev.yuyuyuyuyu.mycomposables.SimpleTopAppBar
+   ```
+
+`SimpleTopAppBar` keeps the same name and parameters.
 
 ## Installation
 
